@@ -1,0 +1,307 @@
+body
+{
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-family: "Big Caslon", "Times New Roman";
+	font-size: 24px;
+}
+#main_container
+{
+	height: 100%;
+	width: 100%;
+}
+
+#main_header
+{
+	font-size: 12px;
+	height: 16px;
+	width: 100%;
+	margin: 0px;
+	color: white;
+	font-family: "Alba";
+}
+h1
+{
+	font-size: 36px;
+}
+span
+{
+	margin-left: 10px;
+}
+.main_body
+{
+	height: 650px;
+	width: 700px;
+	background-color: rgba(28,21,19, .7);
+	border-radius: 5px;
+	color: white;
+	margin-top: 3%;
+	text-align: left;
+}
+.choicePanel
+{
+	margin-top: 10px;
+	margin-bottom: 30px;
+	margin-left: 5%;
+	width: 90%;
+}
+
+.ui-widget-content
+{
+	background: #CE812E;
+}
+
+.ui-slider-range
+{
+	background: #FCCD65;
+}
+.ui-slider-handle
+{
+	height: 5px;
+	width: 5px;
+}
+
+button
+{
+	border-radius: 0px;
+	font-size: 24px;
+	color: white;
+	background-color: rgba(28,21,19, .7);
+	border-color: rgba(28,21,19, .7);
+	float: right;
+}
+button:hover
+{
+	color: #FCCD65;
+}
+
+.text_input
+{
+	height: 30px;
+	width: 75%;
+	margin-left: 10px;
+	font-size: 28px;
+}
+a
+{
+	color: white;
+	text-decoration: none;
+}
+p
+{
+	padding-left: 5px;
+}
+
+h1
+{
+	text-align: center;
+}
+
+#AboutScreen, #DetailsScreen, #LoadingScreen
+{
+	display: none;
+}
+
+#circularG{
+position:relative;
+width:128px;
+height:128px}
+
+.circularG{
+position:absolute;
+background-color:#B76B0E;
+width:29px;
+height:29px;
+-moz-border-radius:19px;
+-moz-animation-name:bounce_circularG;
+-moz-animation-duration:2.08s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-webkit-border-radius:19px;
+-webkit-animation-name:bounce_circularG;
+-webkit-animation-duration:2.08s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-border-radius:19px;
+-ms-animation-name:bounce_circularG;
+-ms-animation-duration:2.08s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-o-border-radius:19px;
+-o-animation-name:bounce_circularG;
+-o-animation-duration:2.08s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+border-radius:19px;
+animation-name:bounce_circularG;
+animation-duration:2.08s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+
+#circularG_1{
+left:0;
+top:50px;
+-moz-animation-delay:0.78s;
+-webkit-animation-delay:0.78s;
+-ms-animation-delay:0.78s;
+-o-animation-delay:0.78s;
+animation-delay:0.78s;
+}
+
+#circularG_2{
+left:14px;
+top:14px;
+-moz-animation-delay:1.04s;
+-webkit-animation-delay:1.04s;
+-ms-animation-delay:1.04s;
+-o-animation-delay:1.04s;
+animation-delay:1.04s;
+}
+
+#circularG_3{
+top:0;
+left:50px;
+-moz-animation-delay:1.3s;
+-webkit-animation-delay:1.3s;
+-ms-animation-delay:1.3s;
+-o-animation-delay:1.3s;
+animation-delay:1.3s;
+}
+
+#circularG_4{
+right:14px;
+top:14px;
+-moz-animation-delay:1.56s;
+-webkit-animation-delay:1.56s;
+-ms-animation-delay:1.56s;
+-o-animation-delay:1.56s;
+animation-delay:1.56s;
+}
+
+#circularG_5{
+right:0;
+top:50px;
+-moz-animation-delay:1.82s;
+-webkit-animation-delay:1.82s;
+-ms-animation-delay:1.82s;
+-o-animation-delay:1.82s;
+animation-delay:1.82s;
+}
+
+#circularG_6{
+right:14px;
+bottom:14px;
+-moz-animation-delay:2.08s;
+-webkit-animation-delay:2.08s;
+-ms-animation-delay:2.08s;
+-o-animation-delay:2.08s;
+animation-delay:2.08s;
+}
+
+#circularG_7{
+left:50px;
+bottom:0;
+-moz-animation-delay:2.34s;
+-webkit-animation-delay:2.34s;
+-ms-animation-delay:2.34s;
+-o-animation-delay:2.34s;
+animation-delay:2.34s;
+}
+
+#circularG_8{
+left:14px;
+bottom:14px;
+-moz-animation-delay:2.6s;
+-webkit-animation-delay:2.6s;
+-ms-animation-delay:2.6s;
+-o-animation-delay:2.6s;
+animation-delay:2.6s;
+}
+
+@-moz-keyframes bounce_circularG{
+0%{
+-moz-transform:scale(1)}
+
+100%{
+-moz-transform:scale(.3)}
+
+}
+
+@-webkit-keyframes bounce_circularG{
+0%{
+-webkit-transform:scale(1)}
+
+100%{
+-webkit-transform:scale(.3)}
+
+}
+
+@-ms-keyframes bounce_circularG{
+0%{
+-ms-transform:scale(1)}
+
+100%{
+-ms-transform:scale(.3)}
+
+}
+
+@-o-keyframes bounce_circularG{
+0%{
+-o-transform:scale(1)}
+
+100%{
+-o-transform:scale(.3)}
+
+}
+
+@keyframes bounce_circularG{
+0%{
+transform:scale(1)}
+
+100%{
+transform:scale(.3)}
+
+}
+
+
+
+/*************************************************************/
+/****** ANYTHING THAT FOLLOWS CORRESPONDS TO THE DETAILS TEXT ************/
+#details_imageContainer
+{
+	float: left;
+	margin-right: 10px;
+}
+
+#details_yelpImage
+{
+	height: 300px;
+	width: 300px;
+}
+#details_snippetText
+{
+	text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

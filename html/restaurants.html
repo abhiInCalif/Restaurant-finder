@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>restaurants</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Abhinav  Khanna">
+	<link rel="stylesheet" href="jquerymin.css" />
+	<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgh5RwfsdJtmkDNQti6ONQOKQ8AM0k3vQ&sensor=false">
+	</script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+	<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer.js"></script>
+	<script src="jquery-1.7.1.js"></script>
+	<script src="jquerymin.js"></script>
+	<script src="google.js"></script>
+	<script src="oath.js"></script>
+	<script src="sha1.js"></script>
+	<script src="restaurant.js"></script>
+	<link rel="stylesheet" href="restaurants.css" />
+
+	<!-- Date: 2013-03-14 -->
+	<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		$("#choicePanel_chinese").slider({
+			orientation: "horizontal",
+			range: "min",
+			max: "10",
+			change: function(event, ui) 
+			{ 
+				restaurant.controller.chinese = ui.value;
+			}
+		});
+		$("#choicePanel_indian").slider({
+			orientation: "horizontal",
+			range: "min",
+			max: "10",
+			change: function(event, ui) 
+			{ 
+				restaurant.controller.indian = ui.value;
+			}
+		});
+		$("#choicePanel_american").slider({
+			orientation: "horizontal",
+			range: "min",
+			max: "10",
+			change: function(event, ui) 
+			{ 
+				restaurant.controller.american = ui.value;
+			}
+		});
+		$("#choicePanel_italian").slider({
+			orientation: "horizontal",
+			range: "min",
+			max: "10",
+			change: function(event, ui) 
+			{ 
+				restaurant.controller.italian = ui.value;
+			}
+		});
+		$("#choicePanel_mexican").slider({
+			orientation: "horizontal",
+			range: "min",
+			max: "10",
+			change: function(event, ui) 
+			{ 
+				restaurant.controller.mexican = ui.value;
+			}
+		});
+		$("#choicePanel_japanese").slider({
+			orientation: "horizontal",
+			range: "min",
+			max: "10",
+			change: function(event, ui) 
+			{ 
+				restaurant.controller.japanese = ui.value;
+			}
+		});
+
+		$("#aboutLink").click(function()
+		{
+			$("#main_body_choice").slideUp(300);
+			$("#AboutScreen").show();
+		});
+
+		$("#restaurantSubmit").click(function()
+		{
+			$("#main_body_choice").slideToggle(300);
+			$("#LoadingScreen").show();
+			var add = $("#add").val();
+
+			// calls geocode and stores lat and lon as the return
+			mapfunction.findGeocode(add, function(results){
+				var longlat = results.geometry.location;
+				restaurant.controller.lat = longlat.lat();
+				restaurant.controller.lon = longlat.lng();
+				restaurant.controller.getRestaurant();
+			});
+		});
+		
+		$("#tryAgain").click(function()
+		{
+			restaurant.controller.tryAgain();
+		});
+
+		$("#newSearch").click(function()
+		{
+			$("#DetailsScreen").fadeOut(function()
+			{
+				$("#main_body_choice").show();
+			});
+		});
+
+	});
+
+	</script>
+
+</head>
+<body>
+	<div id="main_container">
+		<div id="main_header">
+			<a href="http://zipidat.com">Zipidat</a> | <a href="#" id="aboutLink">About</a> | <a href="http://zipidat.com/FantasyFidler">Fantasy Fidler</a>
+		</div>
+		<center>
+
+			<div class="main_body" id="main_body_choice">
+				<!-- The initial drop screen, with the inputs -->
+				<div id="main_body_choicePanel">
+					<div style="margin-bottom: 10px;">
+						<span>Address: </span><input type="text" id="add" class="text_input"/>
+					</div>
+					<div>
+						<span>Chinese</span>
+						<div id="choicePanel_chinese" class="choicePanel"></div>
+					</div>
+					<div>
+						<span>Indian</span>
+						<div id="choicePanel_indian" class="choicePanel"></div>
+					</div>
+					<div>
+						<span>American</span>
+						<div id="choicePanel_american" class="choicePanel"></div>
+					</div>
+					<div>
+						<span>Mexican</span>
+						<div id="choicePanel_mexican" class="choicePanel"></div>
+					</div>
+					<div>
+						<span>Italian</span>
+						<div id="choicePanel_italian" class="choicePanel"></div>
+					</div>
+					<div>
+						<span>Japanese</span>
+						<div id="choicePanel_japanese" class="choicePanel"></div>
+					</div>
+					<div>
+						<button id="restaurantSubmit">Restaurant of Your Choice</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- hidden about content -->
+			<div class="main_body" id="AboutScreen">
+				<!-- The initial drop screen, with the inputs -->
+				<h1>Thank You!</h1>
+				<p>
+					This site is maintained product of the Zipidat group. We are a group of programmers
+					who design cool projects and complete them in our free time. Its been loads of fun, and a shit
+					ton of work so far, but we have, with the help of Yelp's API, been able to create this for you.
+					I hope you find it useful in finding cool places to eat near you. Thats what I use this site for,
+					and I hope thats what you find cool too.
+				</p>
+				<p>
+					Thanks for using this!
+					<p>Sincerely,</p>
+					<p>
+						<a href="mailto:prince_henry@ymail.com">Abhinav Khanna</a>,
+						<a href="mailto:rohits47@gmail.com">Rohit Sandhbati</a>,
+						Rishabh Jain, and Rishi Bhandia.
+					</p>
+				</p>
+			</div>
+
+			<div class="main_body" id="LoadingScreen">
+				<center>
+				<div id="circularG">
+				<div id="circularG_1" class="circularG">
+				</div>
+				<div id="circularG_2" class="circularG">
+				</div>
+				<div id="circularG_3" class="circularG">
+				</div>
+				<div id="circularG_4" class="circularG">
+				</div>
+				<div id="circularG_5" class="circularG">
+				</div>
+				<div id="circularG_6" class="circularG">
+				</div>
+				<div id="circularG_7" class="circularG">
+				</div>
+				<div id="circularG_8" class="circularG">
+				</div>
+				</div></center>
+			</div>
+
+
+			<!-- Hidden Details Page of the entry -->
+			<div class="main_body" id="DetailsScreen">
+				<!-- The initial drop screen, with the inputs -->
+				<div id="main_body_details_container">
+					<div id="details_imageContainer">
+						<img src="logo.jpg"  id="details_yelpImage"/>
+					</div>
+					<div id="details_text">
+						<h1 id="details_text_name">Name of Place</h1>
+						<div id="details_address">Address</div>
+						<p id="details_snippetText">
+							Snippet Text follows in here. Lalala This place is really good. I think we should call it
+							california pizza kitchen, its not funny anymore how useless this will be if I don't get any
+							real data for this shit coming soon. I like tea.
+						</p>
+						<br />
+						<h2>Reviews</h2>
+						<p id="details_text_reviews">
+							Reviews might go here? Tralalala This place sucks balls. This place sucks balls with a fever I cannot
+							even explain.
+						</p>
+						<button id="newSearch">New Search?</button><button id="tryAgain">Try Again?</button>
+					</div>
+				</div>
+			</div>
+
+		</center>
+	</div>
+</body>
+</html>

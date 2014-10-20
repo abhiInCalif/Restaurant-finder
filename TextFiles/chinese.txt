@@ -1,0 +1,4 @@
+chinese, pho, beef, pork, chicken, mooshu, sauce, egg, rolls, egg rolls, soup, tea, green tea, fried fish, duck
+tofu, dumpling, eggplant, rice, garlic, mango, shanghai, loofah, bean, curd, bean curd, chestnuts, mapo, wok
+schezwan, cabbage, meat, spicy, mu shu, general tso's, lion's head, bok choy, noodles, chow mein, loe mein
+brocoli, celary, sesame, orange, kung pao
